@@ -17,13 +17,23 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
    Else WinMaximize A
    Return
 
-; ctrl-alt-n to open a terminal in your home directory
-^!n::
+; ctrl-alt-7 to open a terminal in your home directory
+^!7::
 	SplitPath, A_Desktop,, vDirHome
 	Run, cmder.exe, % vDirHome
 	Return
 
-; ctrl-alt-e to open the run command box
-^!e::
+; ctrl-alt-8 to open the run command box
+^!8::
 	Send #r
 	Return
+
+; ctrl-alt-l to lock
+^!l::
+	DllCall("LockWorkStation")
+	Return
+
+; win key to open task view
+; LWin::
+; 	Send #{Tab}
+; 	Return
