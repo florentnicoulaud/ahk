@@ -34,6 +34,6 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 	Return
 
 ; win key to open task view
-; LWin::
-; 	Send #{Tab}
-; 	Return
+LWin::
+	Send #{Tab}
+	Return
